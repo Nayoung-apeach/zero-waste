@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_Mission"
+        android:enabled="true"
+        android:icon="@drawable/mission"
+        android:title="Mission"/>
+
+    <item
+        android:id="@+id/action_Location"
+        android:enabled="true"
+        android:icon="@drawable/map"
+        android:title="Map" />
+
+    <item
+        android:id="@+id/action_Community"
+        android:enabled="true"
+        android:icon="@drawable/review"
+        android:title="Review" />
+
+    <item
+        android:id="@+id/action_Setting"
+        android:enabled="true"
+        android:icon="@drawable/setting"
+        android:title="Setting"/>
+
+
+</menu>
