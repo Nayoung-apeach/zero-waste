@@ -44,37 +44,146 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         />
+
     <TextView
         android:id="@+id/join_email_text"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintHeight_percent="0.04"
+        app:layout_constraintWidth_percent="0.85"
         app:layout_constraintTop_toBottomOf="@id/join_space1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:text="E-mail"
-        />
-    <Space
-        android:id="@+id/join_space2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintHeight_percent="0.02"
-        app:layout_constraintTop_toBottomOf="@id/join_email_text"
         app:layout_constraintBottom_toTopOf="@id/join_email_textedit"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        android:text="E-mail"
         />
     <EditText
         android:id="@+id/join_email_textedit"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintHeight_percent="0.06"
+        app:layout_constraintWidth_percent="0.85"
         app:layout_constraintTop_toBottomOf="@id/join_email_text"
-        app:layout_constraintBottom_toTopOf=""
+        app:layout_constraintBottom_toTopOf="@id/join_name_text"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-
+        android:backgroundTint="@color/black"
         android:hint="E-mail 주소를 입력해주세요."
+        />
+
+    <TextView
+        android:id="@+id/join_name_text"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.04"
+        app:layout_constraintWidth_percent="0.85"
+        app:layout_constraintTop_toBottomOf="@id/join_email_textedit"
+        app:layout_constraintBottom_toTopOf="@id/join_name_textedit"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="이름"
+        />
+    <EditText
+        android:id="@+id/join_name_textedit"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.06"
+        app:layout_constraintWidth_percent="0.85"
+        app:layout_constraintTop_toBottomOf="@id/join_name_text"
+        app:layout_constraintBottom_toTopOf="@id/join_id_text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:backgroundTint="@color/black"
+        android:hint="이름을 입력해주세요."
+        />
+
+    <TextView
+        android:id="@+id/join_id_text"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.04"
+        app:layout_constraintWidth_percent="0.85"
+        app:layout_constraintTop_toBottomOf="@id/join_name_textedit"
+        app:layout_constraintBottom_toTopOf="@id/join_id_textedit"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="ID"
+        />
+    <EditText
+        android:id="@+id/join_id_textedit"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.06"
+        app:layout_constraintWidth_percent="0.85"
+        app:layout_constraintTop_toBottomOf="@id/join_id_text"
+        app:layout_constraintBottom_toTopOf="@id/join_pwd_text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:backgroundTint="@color/black"
+        android:hint="ID를 입력해주세요."
+        />
+
+    <TextView
+        android:id="@+id/join_pwd_text"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.04"
+        app:layout_constraintWidth_percent="0.85"
+        app:layout_constraintTop_toBottomOf="@id/join_id_textedit"
+        app:layout_constraintBottom_toTopOf="@id/join_pwd_textedit"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="PASSWORD"
+        />
+    <EditText
+        android:id="@+id/join_pwd_textedit"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.06"
+        app:layout_constraintWidth_percent="0.85"
+        app:layout_constraintTop_toBottomOf="@id/join_pwd_text"
+        app:layout_constraintBottom_toTopOf="@id/join_pwd_re_text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:backgroundTint="@color/black"
+        android:hint="PASSWORD를 입력해주세요."
+        />
+
+    <TextView
+        android:id="@+id/join_pwd_re_text"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.04"
+        app:layout_constraintWidth_percent="0.85"
+        app:layout_constraintTop_toBottomOf="@id/join_pwd_textedit"
+        app:layout_constraintBottom_toTopOf="@id/join_pwd_re_textedit"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="PASSWORD 확인"
+        />
+    <EditText
+        android:id="@+id/join_pwd_re_textedit"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.06"
+        app:layout_constraintWidth_percent="0.85"
+        app:layout_constraintTop_toBottomOf="@id/join_pwd_re_text"
+        app:layout_constraintBottom_toBottomOf="@id/join_space2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:backgroundTint="@color/black"
+        android:hint="PASSWORD를 다시 입력해주세요."
+        />
+
+    <Space
+        android:id="@+id/join_space2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.21"
+        app:layout_constraintTop_toBottomOf="@id/join_pwd_re_textedit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         />
 
 
