@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "196499045962",
+    "project_id": "zero-waste-e9ddc",
+    "storage_bucket": "zero-waste-e9ddc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:196499045962:android:508dbacb818be61785f0b3",
+        "android_client_info": {
+          "package_name": "kr.hs.emirim.js.zero_waste"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "196499045962-pqg2d6mqhb8g5bcn51ek3e8feomlke4f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kr.hs.emirim.js.zero_waste",
+            "certificate_hash": "eabdddf487e747cde0a854994c3bc1a0147777c3"
+          }
+        },
+        {
+          "client_id": "196499045962-lq8dlhskqa3harir00qd1lbtj593gp9r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCG_M_tQONwuaGHFTlY9m0ql5A82aRukSs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "196499045962-lq8dlhskqa3harir00qd1lbtj593gp9r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
