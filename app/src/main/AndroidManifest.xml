@@ -22,6 +22,7 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".StartScreenActivity" />
         <activity android:name=".JoinActivity" />
+        <activity android:name=".LoginActivity" />
     </application>
 
 </manifest>
