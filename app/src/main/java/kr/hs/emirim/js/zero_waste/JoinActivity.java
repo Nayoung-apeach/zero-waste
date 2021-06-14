@@ -1,7 +1,9 @@
 package kr.hs.emirim.js.zero_waste;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -53,13 +55,19 @@ public class JoinActivity extends AppCompatActivity {
                 String re_pwd = re_pwd_join.getText().toString().trim();
 
                 // 암호 확인 체크
-                if (pwd != re_pwd) {
+                if (!pwd.equals(re_pwd)) {
                     Toast.makeText(JoinActivity.this, "비밀번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show();
                 }
                 // 유효성 체크
                 else if(email.isEmpty() && name.isEmpty() && id.isEmpty() && pwd.isEmpty() && re_pwd.isEmpty()) {
                     Toast.makeText(JoinActivity.this, "입력되지 않은 항목이 있습니다.", Toast.LENGTH_SHORT).show();
-                } else{
+                }
+                // 신규 계정 등록
+                else{
+                    final ProgressDialog mDialog = new ProgressDialog(JoinActivity.this);
+                    mDialog.setMessage("가입중입니다...");
+                    mDialog.show();
+
                     firebaseAuth.createUserWithEmailAndPassword(email,pwd).addOnCompleteListener(JoinActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull @org.jetbrains.annotations.NotNull Task<AuthResult> task) {
@@ -81,13 +89,23 @@ public class JoinActivity extends AppCompatActivity {
 
                                 // DB 접근 권한 가짐
                                 FirebaseDatabase database = FirebaseDatabase.getInstance();
+                                System.out.println("DB 접근 권한 성공");
                                 // DB Users라는 인스턴스 가짐
                                 DatabaseReference reference = database.getReference("Users");
+                                System.out.println("DB Users 인스턴스");
                                 // 그 child에 HashMap 집어넣음
                                 reference.child(uid).setValue(hashMap);
+                                System.out.println("HashMap");
 
                                 // 가입이 이루어졌을 시 가입 화면을 빠져나감.
-
+                                Intent intent = new Intent(JoinActivity.this, LoginActivity.class);
+                                startActivity(intent);
+                                finish();
+                                Toast.makeText(JoinActivity.this, "회원가입에 성공하셨습니다.", Toast.LENGTH_SHORT).show();
+                            }else{
+                                mDialog.dismiss();
+                                Toast.makeText(JoinActivity.this, "이미 존재하는 아이디 입니다.", Toast.LENGTH_SHORT).show();
+                                return;
                             }
                         }
                     });

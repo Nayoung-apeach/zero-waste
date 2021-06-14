@@ -20,7 +20,7 @@ public class StartScreenActivity extends AppCompatActivity {
         login_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(StartScreenActivity.this, MainActivity.class);
+                Intent intent = new Intent(StartScreenActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
             }
