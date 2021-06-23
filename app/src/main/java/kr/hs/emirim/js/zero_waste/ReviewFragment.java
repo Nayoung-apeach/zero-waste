@@ -1,6 +1,7 @@
 package kr.hs.emirim.js.zero_waste;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -46,7 +47,12 @@ public class ReviewFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_review, container, false);
-        view.findViewById(R.id.floatingActionButton).setOnClickListener(onClickListener);
+        view.findViewById(R.id.head_btn).setOnClickListener(onClickListener);
+        view.findViewById(R.id.body_btn).setOnClickListener(onClickListener);
+        view.findViewById(R.id.leftarm_btn).setOnClickListener(onClickListener);
+        view.findViewById(R.id.rightarm_btn).setOnClickListener(onClickListener);
+        view.findViewById(R.id.leftleg_btn).setOnClickListener(onClickListener);
+        view.findViewById(R.id.rightleg_btn).setOnClickListener(onClickListener);
         return view;
     }
 
@@ -54,44 +60,49 @@ public class ReviewFragment extends Fragment {
         @Override
         public void onClick(View v) {
             switch (v.getId()){
-                case R.id.floatingActionButton:
-                    myStartActivity1(WritePostActivity.class);
+                case R.id.head_btn:
+                    ClickHead(v);
+                    break;
+                case R.id.body_btn:
+                    ClickBody(v);
+                    break;
+                case R.id.leftarm_btn:
+                    ClickLeftArm(v);
+                    break;
+                case R.id.rightarm_btn:
+                    ClickRightArm(v);
+                    break;
+                case R.id.leftleg_btn:
+                    ClickLeftLeg(v);
+                    break;
+                case R.id.rightleg_btn:
+                    ClickRightLeg(v);
                     break;
             }
         }
     };
-
-    private void profileUpdate(){
-
+    private void ClickHead(View v){
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://earthplogging.com/"));
+        startActivity(intent);
     }
-
-    private void myStartActivity1(Class c){
-        Intent intent = new Intent(getActivity(), c);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+    private void ClickBody(View v){
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://news.samsung.com/kr/tag/%EA%B7%B8%EB%A6%B0%EC%B1%8C%EB%A6%B0%EC%A7%80"));
+        startActivity(intent);
+    }
+    private void ClickLeftArm(View v){
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://petlatte.kr/"));
+        startActivity(intent);
+    }
+    private void ClickRightArm(View v){
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://love.seoul.go.kr/asp/articleView.asp?intSeq=8189"));
+        startActivity(intent);
+    }
+    private void ClickLeftLeg(View v){
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://m.worldvision.or.kr/story/covid19-respond/"));
+        startActivity(intent);
+    }
+    private void ClickRightLeg(View v){
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.greenpeace.org/korea/issue-climate/"));
         startActivity(intent);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

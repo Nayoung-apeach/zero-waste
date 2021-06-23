@@ -7,38 +7,69 @@
     android:layout_height="match_parent"
     tools:context=".ReviewFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="5dp"
-        android:backgroundTint="#01D37C"
-        android:text="리뷰" />
+    <ImageButton
+        android:id="@+id/head_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="190dp"
+        android:src="@drawable/head"
+        android:background="@android:color/transparent"
+        />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        android:clickable="true"
-        android:src="@drawable/ic_baseline_add_24" />
+    <ImageButton
+        android:id="@+id/body_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="240dp"
+        android:src="@drawable/body"
+        android:background="@android:color/transparent"
+        />
+
+    <ImageButton
+        android:id="@+id/leftarm_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="370dp"
+        android:layout_marginLeft="90dp"
+        android:src="@drawable/arm1"
+        android:background="@android:color/transparent"
+        />
+
+    <ImageButton
+        android:id="@+id/rightarm_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="370dp"
+        android:layout_marginLeft="585dp"
+        android:src="@drawable/arm2"
+        android:background="@android:color/transparent"
+        />
+
+    <ImageButton
+        android:id="@+id/leftleg_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="800dp"
+        android:layout_marginLeft="240dp"
+        android:src="@drawable/leg1"
+        android:background="@android:color/transparent"
+        />
+
+    <ImageButton
+        android:id="@+id/rightleg_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="800dp"
+        android:layout_marginLeft="440dp"
+        android:src="@drawable/leg2"
+        android:background="@android:color/transparent"
+        />
 
 
-    <!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
-<!--        android:id="@+id/write_btn"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_alignParentEnd="true"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:layout_marginEnd="3dp"-->
-<!--        android:layout_marginBottom="5dp"-->
-<!--        android:backgroundTint="#01D37C"-->
-<!--        android:baselineAlignBottom="false"-->
-<!--        android:clickable="true"-->
-<!--        android:src="@drawable/ic_baseline_add_24"-->
-<!--        />-->
+
+
+
 
 </RelativeLayout>

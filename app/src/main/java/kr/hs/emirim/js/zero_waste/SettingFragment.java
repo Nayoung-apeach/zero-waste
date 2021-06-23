@@ -58,7 +58,6 @@ public class SettingFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_setting, container, false);
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         view.findViewById(R.id.btn_logout).setOnClickListener(onClickListener);
-        view.findViewById(R.id.btn_modify).setOnClickListener(onClickListener);
         text_email = view.findViewById(R.id.text_email);
 
         String user_email = user.getEmail();
@@ -76,9 +75,6 @@ public class SettingFragment extends Fragment {
                 case R.id.btn_logout:
                     FirebaseAuth.getInstance().signOut();
                     myStartActivity(LoginActivity.class);
-                    break;
-                case R.id.btn_modify:
-                    ModifyStartActivity(ModifyActivity.class);
                     break;
             }
         }
