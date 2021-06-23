@@ -14,6 +14,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -102,8 +103,9 @@ public class MapFragment extends Fragment implements OnMapReadyCallback{
         markerOptions.position(MIRIM);
         markerOptions.title("미림마이스터고");
         markerOptions.snippet("전시 진행 중");
-        googleMap.addMarker(markerOptions);
+        markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.map_custom_marker2));
 
+        googleMap.addMarker(markerOptions);
         setMarkers(googleMap);
 
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(MIRIM,13));
@@ -119,6 +121,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback{
             markerOptions.position(new LatLng(Double.parseDouble(infos[i][0]),Double.parseDouble(infos[i][1])));
             markerOptions.title(infos[i][2]);
             markerOptions.snippet(infos[i][3]);
+            markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.map_custom_marker));
 
             // 마커 생성
             googleMap.addMarker(markerOptions);
