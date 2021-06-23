@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
@@ -38,6 +39,7 @@ public class FragThird extends Fragment {
                     @Override
                     public void onClick(View view) {
                         mission_done.dismiss();
+                        Toast.makeText(getContext(),"경험치 +10",Toast.LENGTH_SHORT).show();
                     }
                 });
                 noBtn.setOnClickListener(new View.OnClickListener() {
