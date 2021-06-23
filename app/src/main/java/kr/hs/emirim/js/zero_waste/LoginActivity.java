@@ -24,6 +24,7 @@ import org.jetbrains.annotations.NotNull;
 public class LoginActivity extends AppCompatActivity {
     Button mLoginBtn;
     TextView mJoinText;
+    TextView testLogin;
     EditText mEmailText, mPasswordText;
     private FirebaseAuth firebaseAuth;
 
@@ -38,6 +39,8 @@ public class LoginActivity extends AppCompatActivity {
         mLoginBtn = findViewById(R.id.login_btn);
         mEmailText = findViewById(R.id.login_email_textedit);
         mPasswordText = findViewById(R.id.login_password_textedit);
+
+        testLogin = findViewById(R.id.login_test);
         
         // 회원가입 텍스트 눌리면
         mJoinText.setOnClickListener(new View.OnClickListener() {
@@ -67,6 +70,16 @@ public class LoginActivity extends AppCompatActivity {
                         }
                     }
                 });
+            }
+        });
+
+        //테스트 로그인 눌리면
+        testLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
