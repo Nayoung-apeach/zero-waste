@@ -65,7 +65,7 @@ public class WritePostActivity extends AppCompatActivity {
                             }
                         });
             }
-        }else{
+        }else {
             startToast("회원정보를 입력해주세요.");
         }
     }
