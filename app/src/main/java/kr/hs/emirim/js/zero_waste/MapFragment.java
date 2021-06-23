@@ -25,25 +25,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback{
 
     }
 
-//    private OnMapReadyCallback callback = new OnMapReadyCallback() {
-//
-//        /**
-//         * Manipulates the map once available.
-//         * This callback is triggered when the map is ready to be used.
-//         * This is where we can add markers or lines, add listeners or move the camera.
-//         * In this case, we just add a marker near Sydney, Australia.
-//         * If Google Play services is not installed on the device, the user will be prompted to
-//         * install it inside the SupportMapFragment. This method will only be triggered once the
-//         * user has installed Google Play services and returned to the app.
-//         */
-//        @Override
-//        public void onMapReady(GoogleMap googleMap) {
-//            LatLng sydney = new LatLng(37.46662797606851, 126.93289374450282);
-//            googleMap.addMarker(new MarkerOptions().position(sydney).title("미림여자정보과학고등학교"));
-//            googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
-//        }
-//    };
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -122,6 +103,26 @@ public class MapFragment extends Fragment implements OnMapReadyCallback{
         markerOptions.title("미림마이스터고");
         markerOptions.snippet("전시 진행 중");
         googleMap.addMarker(markerOptions);
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(MIRIM));
+
+        setMarkers(googleMap);
+
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(MIRIM,13));
     }
+
+    private void setMarkers(GoogleMap googleMap){
+        MarkersLocation markersLocation = new MarkersLocation();
+        String[][] infos = markersLocation.getMarkerslo();
+
+        for(int i=0; i<infos.length; i++){
+            // 마커 옵션 설정
+            MarkerOptions markerOptions = new MarkerOptions();
+            markerOptions.position(new LatLng(Double.parseDouble(infos[i][0]),Double.parseDouble(infos[i][1])));
+            markerOptions.title(infos[i][2]);
+            markerOptions.snippet(infos[i][3]);
+
+            // 마커 생성
+            googleMap.addMarker(markerOptions);
+        }
+    }
+
 }
