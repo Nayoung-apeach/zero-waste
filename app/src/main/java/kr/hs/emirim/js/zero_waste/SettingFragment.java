@@ -16,11 +16,11 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class SettingFragment extends Fragment {
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+//    private static final String ARG_PARAM1 = "param1";
+//    private static final String ARG_PARAM2 = "param2";
 
-    private String mParam1;
-    private String mParam2;
+//    private String mParam1;
+//    private String mParam2;
     private View view;
     private FragmentManager fm;
     private FragmentTransaction ft;
@@ -33,8 +33,8 @@ public class SettingFragment extends Fragment {
     public static SettingFragment newInstance(String param1, String param2) {
         SettingFragment fragment = new SettingFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+//        args.putString(ARG_PARAM1, param1);
+//        args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
@@ -43,8 +43,8 @@ public class SettingFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+//            mParam1 = getArguments().getString(ARG_PARAM1);
+//            mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
     private void startMainActivity(){
@@ -59,8 +59,8 @@ public class SettingFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_setting, container, false);
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         view.findViewById(R.id.btn_logout).setOnClickListener(onClickListener);
-        view.findViewById(R.id.lee_btn);
-        view.findViewById(R.id.sun_btn);
+//        view.findViewById(R.id.lee_btn);
+//        view.findViewById(R.id.sun_btn);
         view.findViewById(R.id.kim_btn).setOnClickListener(onClickListener);
         view.findViewById(R.id.park_btn).setOnClickListener(onClickListener);
         view.findViewById(R.id.choi_btn).setOnClickListener(onClickListener);
@@ -107,11 +107,11 @@ public class SettingFragment extends Fragment {
         startActivity(intent);
     }
 
-    private void WritePostStartActivity(Class c){
-        Intent intent = new Intent(getActivity(), c);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);
-    }
+//    private void WritePostStartActivity(Class c){
+//        Intent intent = new Intent(getActivity(), c);
+//        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//        startActivity(intent);
+//    }
 
     private void kimClick(View v){
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/Nayoung-apeach"));
