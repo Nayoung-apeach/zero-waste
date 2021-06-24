@@ -1,1 +1,7 @@
-/build
+/build/generated/ap_generated_sources
+/build/generated/res/resValues
+/build/generated/res/pngs
+/build/generated/source
+/build/intermediates
+/build/outputs
+/build/tmp
