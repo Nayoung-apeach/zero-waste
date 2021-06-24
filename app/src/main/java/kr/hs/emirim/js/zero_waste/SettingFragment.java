@@ -2,6 +2,7 @@ package kr.hs.emirim.js.zero_waste;
 
 import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -58,7 +59,11 @@ public class SettingFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_setting, container, false);
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         view.findViewById(R.id.btn_logout).setOnClickListener(onClickListener);
-        view.findViewById(R.id.btn_modify).setOnClickListener(onClickListener);
+        view.findViewById(R.id.lee_btn);
+        view.findViewById(R.id.sun_btn);
+        view.findViewById(R.id.kim_btn).setOnClickListener(onClickListener);
+        view.findViewById(R.id.park_btn).setOnClickListener(onClickListener);
+        view.findViewById(R.id.choi_btn).setOnClickListener(onClickListener);
         text_email = view.findViewById(R.id.text_email);
 
         String user_email = user.getEmail();
@@ -77,8 +82,14 @@ public class SettingFragment extends Fragment {
                     FirebaseAuth.getInstance().signOut();
                     myStartActivity(LoginActivity.class);
                     break;
-                case R.id.btn_modify:
-                    ModifyStartActivity(ModifyActivity.class);
+                case R.id.kim_btn:
+                    kimClick(v);
+                    break;
+                case R.id.park_btn:
+                    ParkClick(v);
+                    break;
+                case R.id.choi_btn:
+                    ChoiClick(v);
                     break;
             }
         }
@@ -101,4 +112,21 @@ public class SettingFragment extends Fragment {
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
+
+    private void kimClick(View v){
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/Nayoung-apeach"));
+        startActivity(intent);
+    }
+
+    private void ParkClick(View v){
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/seobinpark"));
+        startActivity(intent);
+    }
+
+    private void ChoiClick(View v){
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/dayeon-choi"));
+        startActivity(intent);
+    }
+
+
 }
