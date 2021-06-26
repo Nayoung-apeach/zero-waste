@@ -44,6 +44,7 @@
         <activity android:name=".StartScreenActivity" />
         <activity android:name=".JoinActivity" />
         <activity android:name=".LoginActivity" />
+        <activity android:name=".WritePostActivity" />
     </application>
 
 </manifest>
